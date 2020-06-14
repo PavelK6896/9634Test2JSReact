@@ -1,18 +1,17 @@
 import React, {useState} from 'react';
-import t2 from './data/q1.json'
+import javas1 from './data/javas.json'
 
-const t1 = [
+const start1 = [
     ["2+2", ["1", "2", "3", "4"], [3]],
     ["2+3", ["1", "2", "5", "4"], [2]],
     ["2*2", ["1", "4", "5", "4"], [1, 3]],
 ]
-let data = t1;
 
 function App() {
 
     const [state1, setState1] = useState(
         {
-            data: data || [],
+            data: start1,
             num1: 0,
             ans: [],
             checked1: false,
@@ -130,13 +129,21 @@ function App() {
                 <div>
                     {
                         state1.data[state1.num1][1].map((text, index) =>
-                            <label key={index}><input
-                                style={{marginTop: '20px'}}
-                                type="checkbox"
-                                name="q"
-                                value={index}
-                                onChange={onChangeCheckbox}
-                            /> {index + 1} - {text} <br/></label>)
+                            <label key={index} style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'flex-start',
+
+                            }}>
+                                <input
+                                    style={{margin: '12px 10px'}}
+                                    type="checkbox"
+                                    name="q"
+                                    value={index}
+                                    onChange={onChangeCheckbox}
+                                />
+                                <div dangerouslySetInnerHTML={{__html: text}}/>
+                            </label>)
                     }
                 </div>
         } else {
@@ -144,13 +151,22 @@ function App() {
                 <div>
                     {
                         state1.data[state1.num1][1].map((text, index) =>
-                            <label key={index}><input
-                                style={{marginTop: '20px'}}
-                                type="radio"
-                                name="q"
-                                value={index}
-                                onChange={onChangeRadio}
-                            /> {index + 1} - {text} <br/></label>)
+                            <label style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'flex-start',
+
+                            }} key={index}>
+                                <input
+                                    style={{margin: '12px 10px'}}
+                                    type="radio"
+                                    name="q"
+                                    value={index}
+                                    onChange={onChangeRadio}
+                                />
+                                <div dangerouslySetInnerHTML={{__html: text}}/>
+
+                            </label>)
                     }
                 </div>
         }
@@ -158,33 +174,37 @@ function App() {
 
     return (
         <div style={{maxWidth: '800px', margin: '0 auto',}}>
-            <button onClick={() => start(t1)}>t1</button>
-            <button onClick={() => start(t2)}>t2</button>
+            <button onClick={() => start(start1)}>start</button>
+            <button onClick={() => start(javas1)}>javas1</button>
             <div style={{
                 display: 'flex',
-                justifyContent: 'center',
+                // justifyContent: 'center',
                 flexDirection: 'column',
-                alignItems: 'center',
+                // alignItems: 'center',
                 fontSize: '22px',
+                // minHeight: '100vh'
             }}>
-                <h3>
-                    {state1.num1 + 1}/
-                    {state1.data[state1.num1][0]}
-                </h3><br/>{div1}
-                <div style={{
-                    margin: '50px',
-                }}>
-                    <button style={{
-                        padding: '40px'
 
-                    }} onClick={next}>next
-                    </button>
-                    <button style={{
-                        padding: '40px'
 
-                    }} onClick={right}>right
-                    </button>
-                </div>
+                <div dangerouslySetInnerHTML={{__html: state1.data[state1.num1][0]}}/>
+                <br/>{div1}
+
+
+            </div>
+            <div style={{
+                margin: '50px',
+
+            }}>
+                <button style={{
+                    padding: '40px'
+
+                }} onClick={next}>next
+                </button>
+                <button style={{
+                    padding: '40px'
+
+                }} onClick={right}>right
+                </button>
                 <div>
                     правильно: {state1.right} <br/>
                     неправильно: {state1.wrong}
