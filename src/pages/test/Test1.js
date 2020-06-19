@@ -1,19 +1,12 @@
 import React, {useState} from 'react';
-import javas1 from '../../data/javas.json'
 import {Navbar} from "../components/Navbar";
-import mysql1 from "../../data/mysql+.json";
-
-const start1 = [
-    ["2+2", ["1", "2", "3", "4"], [3]],
-    ["2+3", ["1", "2", "5", "4"], [2]],
-    ["2*2", ["1", "4", "5", "4"], [1, 3]],
-]
+import {mysql04} from '../../data/mysql04.js'
 
 function Test1() {
 
     const [state1, setState1] = useState(
         {
-            data: start1,
+            data: mysql04,
             num1: 0,
             ans: [],
             checked1: false,
@@ -174,12 +167,12 @@ function Test1() {
         }
     }
 
-
+    //document.getSelection().removeAllRanges(); // очистить текущее выделение, если оно существует
     function copy(e) {
         const text22 = document.getElementById("text99");
         let range = new Range();
         range.selectNode(text22)
-        document.getSelection().removeAllRanges(); // очистить текущее выделение, если оно существует
+        document.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
         document.execCommand("copy",);
     }
@@ -203,9 +196,7 @@ function Test1() {
                     marginTop: "10px",
 
                 }}>
-                    <button onClick={() => start(start1)}>start</button>
-                    <button onClick={() => start(javas1)}>javas1</button>
-                    <button onClick={() => start(mysql1)}>mysql+</button>
+                    <button onClick={() => start(mysql04)}>mysql04</button>
                 </div>
 
             </div>

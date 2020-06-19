@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+p{
+
+  margin-top: -35px;
+  margin-left: 35px;
+  padding-top: 5px;
+  padding-left: 5px;
+  line-height: 35px;
+  font-weight: 200;
+
+}
+
+b{
+  font-weight: 200;
+}
+
+code{
+  font-weight: 200;
+}
+
+pre{
+  font-weight: 200;
+}
+
+span{
+  font-weight: 200;
+}
+
+.d1 b{
+  font-weight: 500;
+  }
+.d1 p{
+  font-weight: 500;
+}
