@@ -1,10 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
-
 export const Navbar = () => {
-
-
     return(
         <div style={{
             display: "flex",
@@ -14,6 +11,4 @@ export const Navbar = () => {
             <NavLink  to="/test">test</NavLink>
         </div>
     )
-
-
 }

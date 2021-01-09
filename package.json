@@ -31,5 +31,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/PavelK6896/9634Test2JSReact.git",
+  "author": "PavelK6896 <79208776896@yandex.ru>",
+  "license": "MIT"
 }
