@@ -9,21 +9,25 @@ import {english2} from '../../data/english2.js'
 import {english3} from '../../data/english3.js'
 import {security1} from '../../data/security1.js'
 import {security2} from '../../data/security2.js'
+import {js1} from '../../data/js1.js'
 import {js2} from '../../data/js2.js'
 import {js3} from '../../data/js3.js'
 import {js4} from '../../data/js4.js'
+import {java1} from '../../data/java1.js'
+import {java2} from '../../data/java2.js'
 import {java3} from '../../data/java3.js'
 import {java4} from '../../data/java4.js'
 import {linux1} from '../../data/linux1.js'
+import {linked1} from '../../data/linked1.js'
 
-let arr1 = {mysql04, spring1, english1, english2, english3, security1, security2, js2, js3, js4, java3, java4, linux1}
+let arr1 = {java1, java2, java3, java4, mysql04, spring1, english1, english2, english3,
+    security1, security2,  js1, js2, js3, js4,  linux1, linked1}
 const arr2 = Object.keys(arr1);
-const i1 = 8
 
 export default function Data1() {
     const [state1, setState1] = useState({
-        data: arr1.js3 || [],
-        name: arr2[i1]
+        data: arr1.linked1 || [],
+        name: ""
     })
 
     function btn(d, name) {
